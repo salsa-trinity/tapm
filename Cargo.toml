@@ -1,0 +1,8 @@
+[package]
+name = "tapm"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rpassword = "7.3.1"
+sha3 = "0.10.8"

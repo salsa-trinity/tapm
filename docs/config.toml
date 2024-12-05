@@ -1,0 +1,4 @@
+[config]
+copy_cmd = "wl-copy -o"
+pass_len = 25
+user_len = 25
