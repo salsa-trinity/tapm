@@ -118,5 +118,4 @@ Make sure the subject of the email is 'tapm vulnerability'.
 ## ToDo
 
 - Config file support
-- Multiple flags in a single one.
 

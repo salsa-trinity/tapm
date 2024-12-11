@@ -82,6 +82,10 @@ impl Api {
                 }
                 "-p" | "--print" => self.flag_p = true,
                 "-u" | "--user" => self.flag_u = true,
+                "-pu" => {
+                    self.flag_p = true;
+                    self.flag_u = true;
+                }
                 _ => {}
             }
         }
