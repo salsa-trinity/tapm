@@ -109,7 +109,7 @@ This project is licensed under the terms of [The MIT License.](https://mit-licen
 
 ## Contributing
 
-If you have any suggestions or questions, please open an issue or make a pull request.
+If you have any suggestions or questions, please open an issue, or make a pull request.
 
 In the case that you find an exploitable vulnerability, please send an email to <salsa-trinity-wavy@duck.com>
 
@@ -117,6 +117,6 @@ Make sure the subject of the email is 'tapm vulnerability'.
 
 ## ToDo
 
-- Copy password to clipboard
 - Config file support
+- Multiple flags in a single one.
 
