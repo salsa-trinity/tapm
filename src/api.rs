@@ -1,9 +1,12 @@
 use sha3::Digest;
 
+use crate::config::Config;
+
 pub struct Api {
     flag_l: i32,
     flag_p: bool,
     flag_u: bool,
+    config: Config,
 }
 
 impl Api {
@@ -12,10 +15,12 @@ impl Api {
             flag_l: 25,
             flag_p: false,
             flag_u: false,
+            config: Config::new(),
         }
     }
 
     pub fn main(&mut self, mpass: &String, site: &String, id: &String, flags: &Vec<String>) {
+        crate::config::Config::new();
         self.process_flags(flags);
 
         let mut hasher = sha3::Sha3_512::new();
@@ -62,11 +67,12 @@ impl Api {
                 .arg("-o")
                 .arg(pass)
                 .spawn()
-                .expect("Failed to copy passwd to clipboard");
+                .expect("Failed to copy passwd to clipboard. NOTE: command \"wl-copy -o\" is used by default.");
         }
     }
 
     pub fn process_flags(&mut self, flags: &Vec<String>) {
+        self.flag_l = self.config.out_len;
         for flag in flags {
             match flag.as_str() {
                 "-h" | "--help" => {

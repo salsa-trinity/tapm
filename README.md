@@ -81,7 +81,7 @@ See the [default config.](./docs/config.toml)
 | Option | Data Type | Default | Description |
 |:------:|:---------:|:-------:|-------------|
 | copy_cmd | String | wl-copy -o | the command that gets executed when copying to the clipboard. |
-| pass_len | i32 | 25 | the maximum lenght a password is allowed to have. |
+| out_len | i32 | 25 | the maximum lenght an output is allowed to have. |
 
 ## Possible risks
 
