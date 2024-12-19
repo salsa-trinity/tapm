@@ -11,5 +11,8 @@ impl Config {
 
         Config { copy_cmd, out_len }
     }
-    //pub fn process_cmd(&self) -> Vec<String> {}
+
+    pub fn process_cmd(&self) -> Vec<&str> {
+        self.copy_cmd.split(" ").collect()
+    }
 }

@@ -1,20 +1,19 @@
 fn main() {
     let mut api = tapm::api::Api::new();
 
-    let mut flags: Vec<String> = std::env::args().collect();
-    if flags.len() != 1 {
-        api.process_flags(&flags);
-    }
+    let flags: Vec<String> = std::env::args().collect();
+    api.process_flags(&flags);
 
-    let mpass = rpassword::prompt_password("Master: ").unwrap();
-    let site = rpassword::prompt_password("Site: ").unwrap();
-    let id = rpassword::prompt_password("ID(opt): ").unwrap();
+    let mpass: String;
+    let mut site = String::new();
+    let mut id = String::new();
 
-    if flags.len() == 1 {
-        let _flags = rpassword::prompt_password("Flags(opt): ").unwrap();
-        for word in _flags.split_whitespace() {
-            flags.push(word.to_string());
-        }
+    if api.flag_s {
+        mpass = rpassword::prompt_password("Single: ").unwrap();
+    } else {
+        mpass = rpassword::prompt_password("Master: ").unwrap();
+        site = rpassword::prompt_password("Site: ").unwrap();
+        id = rpassword::prompt_password("ID(opt): ").unwrap();
     }
 
     api.main(&mpass, &site, &id, &flags);
