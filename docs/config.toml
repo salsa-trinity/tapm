@@ -1,3 +1,2 @@
-[config]
 copy_cmd = "wl-copy -o"
 out_len = 25

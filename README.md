@@ -118,7 +118,3 @@ In the case that you find an exploitable vulnerability, please send an email to 
 
 Make sure the subject of the email is 'tapm vulnerability'.
 
-## ToDo
-
-- Config file support
-

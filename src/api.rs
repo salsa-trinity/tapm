@@ -1,6 +1,5 @@
-use sha3::Digest;
-
 use crate::config::Config;
+use sha3::Digest;
 
 pub struct Api {
     flag_l: i32,
@@ -23,6 +22,7 @@ impl Api {
 
     pub fn main(&mut self, mpass: &String, site: &String, id: &String, flags: &Vec<String>) {
         crate::config::Config::new();
+        self.config = self.config.read_config_file();
         self.process_flags(flags);
 
         let mut hasher = sha3::Sha3_512::new();
