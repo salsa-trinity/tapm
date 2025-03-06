@@ -13,5 +13,7 @@ pub fn clean_hash(seed: &str) -> String {
         let clean_byte = ((byte as f64 * (126 - 32) as f64 / 255f64) + 32f64).round() as u8;
         clean += &String::from(clean_byte as char);
     }
+    clean.truncate(30);
+
     clean
 }
